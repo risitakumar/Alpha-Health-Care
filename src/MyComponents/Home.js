@@ -1,16 +1,19 @@
 import home from "../home.jpg";
+import { AddAppoint } from "./AddAppoint";
 import "./App.css";
+import { Appointments } from "./Appointments";
 import Header from "./Header";
+import {useHistory} from 'react-router-dom'
 
-function App() {
+
+export function Home() {
+  const history = useHistory()
   return (
     <>
-      <Header />
-
       <div class="img-wrapper">
         <img src={home} className="img-responsive" alt="home" />
         <div class="img-overlay">
-          <button Link="/app" className="btn btn-md btn-primary">
+          <button onClick={() => {history.push("/login")}} className="btn btn-md btn-primary">
             Book Appointments
           </button>
         </div>
@@ -28,4 +31,3 @@ function App() {
   );
 }
 
-export default App;

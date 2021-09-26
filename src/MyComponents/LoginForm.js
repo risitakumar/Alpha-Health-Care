@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./LoginForm.css";
 import { API_BASE_URL } from "./constants/apiContants";
-import { withRouter } from "react-router-dom";
+import { useHistory } from "react-router";
+import { AddAppoint } from "./AddAppoint";
+import { RegistrationForm } from "./RegistrationForm";
 
-function LoginForm(props) {
+export function LoginForm(props) {
+  const history = useHistory();
   const [state, setState] = useState({
     email: "",
     password: "",
@@ -53,7 +56,15 @@ function LoginForm(props) {
     props.updateTitle("Register");
   };
   return (
-    <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
+    <div
+      className="card col-12 col-lg-4 login-card mt-2 hv-center"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: "100%",
+      }}
+    >
       <form>
         <div className="form-group text-left">
           <label htmlFor="exampleInputEmail1">Email address</label>
@@ -85,7 +96,9 @@ function LoginForm(props) {
         <button
           type="submit"
           className="btn btn-primary"
-          onClick={handleSubmitClick}
+          onClick={() => {
+            history.push("/appointment");
+          }}
         >
           Submit
         </button>
@@ -98,13 +111,18 @@ function LoginForm(props) {
         {state.successMessage}
       </div>
       <div className="registerMessage">
-        <span>Dont have an account? </span>
-        <span className="loginText" onClick={() => redirectToRegister()}>
+        <span>Do not have an account? </span>
+
+        <button
+          type="submit"
+          className="btn btn-primary"
+          onClick={() => {
+            history.push("/registrationform");
+          }}
+        >
           Register
-        </span>
+        </button>
       </div>
     </div>
   );
 }
-
-export default withRouter(LoginForm);

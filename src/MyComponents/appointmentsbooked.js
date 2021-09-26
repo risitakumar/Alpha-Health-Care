@@ -39,11 +39,11 @@ function App() {
       patientailmentdesc
     );
     let appointmentsid;
-    if (appointments.length == 0) {
-      appointmentsid = 0;
-    } else {
-      appointmentsid = appointments[appointments.length - 1].appointmentsid + 1;
-    }
+    console.log(appointments.length, "Current Length")
+    if (appointments.length === 0) {
+      appointmentsid = Math.floor((Math.random() * 100) + 1);
+      console.log(appointmentsid,"appointmentsidappointmentsid")
+    } 
 
     const myAppoint = {
       appointmentsid: appointmentsid,
@@ -67,7 +67,6 @@ function App() {
       <Header />
       <AddAppoint addAppoint={addAppoint} />
       <Appointments appointments={appointments} onSubmit={onSubmit} />
-      <Footer />
     </>
   );
 }

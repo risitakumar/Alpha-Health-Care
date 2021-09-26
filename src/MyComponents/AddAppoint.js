@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Appointments } from "../MyComponents/Appointments";
 
 export const AddAppoint = ({ addAppoint }) => {
   const [appointmentdept, setappointmentdept] = useState("");
@@ -34,7 +35,17 @@ export const AddAppoint = ({ addAppoint }) => {
   };
   return (
     <div className="container my-3">
-      <h3>Book your appointment by entering your details </h3>
+      <h3
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100%",
+          marginTop: "5%",
+        }}
+      >
+        Book your appointment by entering your details{" "}
+      </h3>
       <form onSubmit={submit}>
         <div className="mb-3">
           <label htmlFor="appointmentdept" className="form-label">
