@@ -1,0 +1,64 @@
+.navbar-custom {
+  background-color: #fffdfa;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: rgba(12, 88, 46, 0.8);
+}
+.navbar-custom .navbar-nav .nav-link {
+  color: rgba(12, 88, 46, 0.8);
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: black;
+}
+.navbar a {
+  font-family: Garamond, serif;
+}
+.navbar-brand {
+  font-family: Garamond, serif;
+  font-weight: 900;
+  font-size: 45px;
+}
+
+.img-wrapper {
+  position: relative;
+}
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+.img-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 500px;
+  right: 0;
+  text-align: center;
+}
+.img-overlay:before {
+  content: " ";
+  display: block;
+  /* adjust 'height' to position overlay content vertically */
+  height: 50%;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #02b290;
+  background-color: cutom-color;
+  border-color: white;
+  border-color: cutom-cor;
+}
+.card {
+  top: 10px;
+  bottom: 5px;
+  left: 2px;
+  right: 2px;
+  text-align: center;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 20px;
+  border-color: white;
+  color: rgba(12, 88, 46, 0.8);
+}
